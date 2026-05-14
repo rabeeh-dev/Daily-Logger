@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg-base:        #000000;
+  --color-bg-surface:     #050505;
+  --color-bg-elevated:    #0D0D0D;
+  --color-bg-input:       #0A0A0A;
+  --color-border-default: #1A1A1A;
+  --color-border-active:  #FFFFFF;
+  --color-text-primary:   #FFFFFF;
+  --color-text-secondary: #555555;
+  --color-text-muted:     #2A2A2A;
+  
+  --color-accent-green:   #4ADE80;
+  --color-accent-red:     #F87171;
+  --color-accent-amber:   #FACC15;
+  --color-accent-violet:  #A78BFA;
+  
+  --color-progress-track: #1A1A1A;
+  --color-progress-fill:  #FFFFFF;
+  --color-xp-bar-fill:    #A78BFA;
+
+  --radius-card: 16px;
+  --radius-btn: 8px;
+  --radius-badge: 6px;
+}
+
+@theme {
+  --color-bg-base: var(--color-bg-base);
+  --color-bg-surface: var(--color-bg-surface);
+  --color-bg-elevated: var(--color-bg-elevated);
+  --color-bg-input: var(--color-bg-input);
+  --color-border-default: var(--color-border-default);
+  --color-border-active: var(--color-border-active);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-accent-green: var(--color-accent-green);
+  --color-accent-red: var(--color-accent-red);
+  --color-accent-amber: var(--color-accent-amber);
+  --color-accent-violet: var(--color-accent-violet);
+  --color-progress-track: var(--color-progress-track);
+  --color-progress-fill: var(--color-progress-fill);
+  --color-xp-bar-fill: var(--color-xp-bar-fill);
+}
+
+* {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes growWidth {
+  from { width: 0%; }
+  to   { width: var(--fill-width); }
+}
+
+@keyframes colonPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+.s1 { animation: fadeSlideUp 0.25s ease 0.04s both; }
+.s2 { animation: fadeSlideUp 0.25s ease 0.08s both; }
+.s3 { animation: fadeSlideUp 0.25s ease 0.12s both; }
+.s4 { animation: fadeSlideUp 0.25s ease 0.16s both; }
+.s5 { animation: fadeSlideUp 0.25s ease 0.20s both; }
+.s6 { animation: fadeSlideUp 0.25s ease 0.24s both; }
+
+.progress-fill {
+  animation: growWidth 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.35s both;
+  border-radius: 1px !important;
+}
+
+.timer-colon {
+  animation: colonPulse 1s step-start infinite;
+}
